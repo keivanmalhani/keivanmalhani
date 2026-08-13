@@ -9,46 +9,46 @@ agent safety story, a deployment story, and a few workshop tools built the same 
 
 ```text
 PHOTO
-  shutter-roll ....... scanned film gets its real stock, camera and shoot date back
-  shutter-cull ....... burst clustering, blur and eye scoring, keepers picked
+  shutter-roll ........... scanned film gets its real stock, camera and shoot date back
+  shutter-cull ........... burst clustering, blur and eye scoring, keepers picked
        |
        v
   Lightroom Classic reads the XMP sidecars natively
 
 AGENTS
-  shutter-mcp ........ the same library, read-only, exposed to AI agents
-  shutter-cull-mcp ... the write side: agents propose, humans confirm, undo always
+  shutter-mcp ............ the same library, read-only, exposed to AI agents
+  shutter-cull-mcp ....... the write side: agents propose, humans confirm, undo always
 
 VIDEO
-  shutter-select ..... local transcription, take detection, audio and image scoring
-  shutter-clip ....... social re-rank, cut, phone-ready posts
+  shutter-select ......... local transcription, take detection, audio and image scoring
+  shutter-clip ........... social re-rank, cut, phone-ready posts
        |
        +--> selects timeline, opens in Resolve or Premiere
        +--> analysis JSON, a versioned contract computed once
 
 ON A SCHEDULE
-  shutter-farm ....... the whole archive, nightly, in a container. Never twice.
+  shutter-batch .......... the whole archive, nightly, in a container. Never twice.
 
 WORKSHOP
-  printcheck ......... drop an STL, see if it will print. Nothing uploads.
-  spool .............. filament inventory and the true cost of a print, failures included
-  gearwatch .......... is this used lens actually a deal, measured against its own sold history
-  shutter-warehouse .. the other tools&#x27; output, aggregated three ways in Spark
+  printcheck ............. drop an STL, see if it will print. Nothing uploads.
+  filament-cost-tracker .. filament inventory and the true cost of a print, failures included
+  camera-gear-pricing .... is this used lens actually a deal, measured against its own sold history
+  shutter-warehouse ...... the other tools&#x27; output, aggregated three ways in Spark
 
 BROWSER
-  motion-recipes ..... fourteen micro-interactions with no animation library underneath
-  portfolio-site ..... the site you are looking at, tested without a GPU
-  d2-auth ............ The sign-in step for the Destiny tools. It is one page that nobody vis
-  dps-maximizer ...... Sign in with Bungie, pick your class and what you are doing - a generi
-  exif-atlas ......... is a sample report, so you can see what this produces without installi
-  fireteam-report .... Compare a Destiny 2 fireteam&#x27;s raid and dungeon clears and get a ranke
-  gcode-lint ......... Static analysis for sliced 3D printer gcode. It reads the file once an
-  goldenhour ......... A command line tool that tells a photographer when and where the light
-  guardian-timeline .. Raid Report shows your clears. Destiny Tracker shows your kill to deat
-  lutbox ............. Drop a photo and a `.cube` LUT onto the page. The grade is applied at 
-  mcp-probe .......... Audit an MCP server before you connect an agent to it.
-  timecode ........... SMPTE timecode arithmetic for video editors, with drop frame handled t
-  weapon-report ...... light.gg tells you what is good. DIM tells you what you own. This tell
+  motion-recipes ......... fourteen micro-interactions with no animation library underneath
+  portfolio-site ......... the site you are looking at, tested without a GPU
+  d2-auth ................ The sign-in step for the Destiny tools. It is one page that nobody vis
+  dps-maximizer .......... Sign in with Bungie, pick your class and what you are doing - a generi
+  exif-atlas ............. is a sample report, so you can see what this produces without installi
+  fireteam-report ........ Compare a Destiny 2 fireteam&#x27;s raid and dungeon clears and get a ranke
+  gcode-lint ............. Static analysis for sliced 3D printer gcode. It reads the file once an
+  goldenhour ............. A command line tool that tells a photographer when and where the light
+  guardian-timeline ...... Raid Report shows your clears. Destiny Tracker shows your kill to deat
+  lutbox ................. Drop a photo and a `.cube` LUT onto the page. The grade is applied at 
+  mcp-probe .............. Audit an MCP server before you connect an agent to it.
+  timecode ............... SMPTE timecode arithmetic for video editors, with drop frame handled t
+  weapon-report .......... light.gg tells you what is good. DIM tells you what you own. This tell
 ```
 
 ## The tools
@@ -61,10 +61,10 @@ BROWSER
 | [shutter-cull-mcp](https://github.com/keivanmalhani/shutter-cull-mcp) | The write side of the agent story. An agent cannot call a write tool here: it has to produ | Python, MCP, agent safety | 51 tests |
 | [shutter-select](https://github.com/keivanmalhani/shutter-select) | Culls raw footage. Transcribes every word locally with Whisper, finds takes by listening r | Python, faster-whisper, PySceneDetect | 97 tests |
 | [shutter-clip](https://github.com/keivanmalhani/shutter-clip) | Zero-edit path from a footage drive to posted clips: motion-ranked picks with readable nam | Python stdlib, ffmpeg, HEVC / VideoToolbox | 53 tests |
-| [shutter-farm](https://github.com/keivanmalhani/shutter-farm) | Point a container at a media volume and the whole archive gets culled on a schedule, witho | Python stdlib, Docker, Kubernetes | 92 tests |
+| [shutter-batch](https://github.com/keivanmalhani/shutter-batch) | Point a container at a media volume and the whole archive gets culled on a schedule, witho | Python stdlib, Docker, Kubernetes | 92 tests |
 | [printcheck](https://keivanmalhani.github.io/printcheck/) | Drag an STL onto the page. Overhang faces glow red, thin walls amber, open edges cyan, and | TypeScript, Three.js, Vite | 28 tests |
-| [spool](https://github.com/keivanmalhani/spool) | What a 3D print actually costs, which is never just the filament: the failed prints that b | Python stdlib, Klipper / Moonraker, OctoPrint | 370 tests |
-| [gearwatch](https://github.com/keivanmalhani/gearwatch) | Used camera gear pricing from the official eBay APIs, never a scraper. It builds a sold-pr | Python stdlib, OAuth2, eBay Browse API | 220 tests |
+| [filament-cost-tracker](https://github.com/keivanmalhani/filament-cost-tracker) | What a 3D print actually costs, which is never just the filament: the failed prints that b | Python stdlib, Klipper / Moonraker, OctoPrint | 370 tests |
+| [camera-gear-pricing](https://github.com/keivanmalhani/camera-gear-pricing) | Used camera gear pricing from the official eBay APIs, never a scraper. It builds a sold-pr | Python stdlib, OAuth2, eBay Browse API | 220 tests |
 | [shutter-warehouse](https://github.com/keivanmalhani/shutter-warehouse) | Batch analytics over the data the other shutter-* tools produce. A PySpark DataFrame ETL,  | Python, PySpark, Spark SQL | 17 tests |
 | [motion-recipes](https://keivanmalhani.github.io/motion-recipes/) | Fourteen production-ready micro-interactions on the Web Animations API, each with a live d | TypeScript, Web Animations API, Vite | 103 tests |
 | [portfolio-site](https://keivanmalhani.github.io/portfolio/) | The public site itself: a bilingual portfolio with a WebGL hero where photographs cross-di | TypeScript, WebGL2, GLSL | 68 tests |
@@ -91,7 +91,7 @@ not there, and that is the cheapest thing in the world for an interviewer to che
 - **Local-first is a feature, not a limitation.** Client work should not have to cross a network to
   be useful. Every engine reads from disk, computes on the CPU in front of it, and writes back
   beside the originals.
-- **Deployable and private are not opposites.** shutter-farm runs the same engines nightly in a
+- **Deployable and private are not opposites.** shutter-batch runs the same engines nightly in a
   container, mounting your volume, on your cluster, with no outbound network.
 - **Judgment beats thresholds.** Scores are percentile-ranked within a run, so each shoot is judged
   against itself instead of against a constant that breaks on the next one.
