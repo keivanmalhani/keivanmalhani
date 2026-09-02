@@ -67,7 +67,7 @@ BROWSER
 | [camera-gear-pricing](https://github.com/keivanmalhani/camera-gear-pricing) | Used camera gear pricing from the official eBay APIs, never a scraper. It builds a sold-pr | Python stdlib, OAuth2, eBay Browse API | 220 tests |
 | [shutter-warehouse](https://github.com/keivanmalhani/shutter-warehouse) | Batch analytics over the data the other shutter-* tools produce. A PySpark DataFrame ETL,  | Python, PySpark, Spark SQL | 17 tests |
 | [motion-recipes](https://keivanmalhani.github.io/motion-recipes/) | Fourteen production-ready micro-interactions on the Web Animations API, each with a live d | TypeScript, Web Animations API, Vite | 103 tests |
-| [portfolio-site](https://keivanmalhani.github.io/portfolio/) | The public site itself: a bilingual portfolio with a WebGL hero where photographs cross-di | TypeScript, WebGL2, GLSL | 68 tests |
+| [portfolio-site](https://keivanmalhani.github.io/portfolio/) | The public site itself: a portfolio with a WebGL hero where photographs cross-dissolve thr | TypeScript, WebGL2, GLSL | 65 tests |
 | [d2-auth](https://github.com/keivanmalhani/d2-auth) | The sign-in step for the Destiny tools. It is one page that nobody visits on purpose. | TypeScript | 37 tests |
 | [dps-maximizer](https://github.com/keivanmalhani/dps-maximizer) | Sign in with Bungie, pick your class and what you are doing - a generic mode or a specific | TypeScript, @napi-rs/canvas, @types/node | 1173 tests |
 | [exif-atlas](https://github.com/keivanmalhani/exif-atlas) | is a sample report, so you can see what this produces without installing it. The library b | Python | 360 tests |
@@ -80,7 +80,7 @@ BROWSER
 | [timecode](https://github.com/keivanmalhani/timecode) | SMPTE timecode arithmetic for video editors, with drop frame handled the way SMPTE ST 12-1 | TypeScript | 338 tests |
 | [weapon-report](https://github.com/keivanmalhani/weapon-report) | light.gg tells you what is good. DIM tells you what you own. This tells you what you actua | TypeScript, @napi-rs/canvas, @types/node | 306 tests |
 
-**5032 tests across 24 repositories**, and that number is generated rather than written:
+**5029 tests across 24 repositories**, and that number is generated rather than written:
 `collect.py` builds a clean environment per repo, runs each real suite, and writes the counts to
 `verified.json`. The portfolio page and this README are rendered from that file and refuse to print
 a count that did not come from a run. It exists because a README once claimed nine tests that were
