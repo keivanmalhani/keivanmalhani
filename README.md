@@ -1,6 +1,6 @@
 # Hi, I'm Keivan
 
-I build local-first tools for photographers and filmmakers. 24 of them are here, they all run
+I build local-first tools for photographers and filmmakers. 19 of them are here, they all run
 entirely on your own machine, and none of them ask for an account.
 
 The through-line: **taking a shoot from memory card to finished post without a subscription and
@@ -38,17 +38,12 @@ WORKSHOP
 BROWSER
   motion-recipes ......... fourteen micro-interactions with no animation library underneath
   portfolio-site ......... the site you are looking at, tested without a GPU
-  d2-auth ................ The sign-in step for the Destiny tools. It is one page that nobody vis
-  dps-maximizer .......... Sign in with Bungie, pick your class and what you are doing - a generi
   exif-atlas ............. is a sample report, so you can see what this produces without installi
-  fireteam-report ........ Compare a Destiny 2 fireteam&#x27;s raid and dungeon clears and get a ranke
   gcode-lint ............. Static analysis for sliced 3D printer gcode. It reads the file once an
   goldenhour ............. A command line tool that tells a photographer when and where the light
-  guardian-timeline ...... Raid Report shows your clears. Destiny Tracker shows your kill to deat
   lutbox ................. Drop a photo and a `.cube` LUT onto the page. The grade is applied at 
   mcp-probe .............. Audit an MCP server before you connect an agent to it.
   timecode ............... SMPTE timecode arithmetic for video editors, with drop frame handled t
-  weapon-report .......... light.gg tells you what is good. DIM tells you what you own. This tell
 ```
 
 ## The tools
@@ -68,19 +63,14 @@ BROWSER
 | [shutter-warehouse](https://github.com/keivanmalhani/shutter-warehouse) | Batch analytics over the data the other shutter-* tools produce. A PySpark DataFrame ETL,  | Python, PySpark, Spark SQL | 17 tests |
 | [motion-recipes](https://keivanmalhani.github.io/motion-recipes/) | Fourteen production-ready micro-interactions on the Web Animations API, each with a live d | TypeScript, Web Animations API, Vite | 103 tests |
 | [portfolio-site](https://keivanmalhani.github.io/portfolio/) | The public site itself: a portfolio with a WebGL hero where photographs cross-dissolve thr | TypeScript, WebGL2, GLSL | 65 tests |
-| [d2-auth](https://github.com/keivanmalhani/d2-auth) | The sign-in step for the Destiny tools. It is one page that nobody visits on purpose. | TypeScript | 37 tests |
-| [dps-maximizer](https://github.com/keivanmalhani/dps-maximizer) | Sign in with Bungie, pick your class and what you are doing - a generic mode or a specific | TypeScript, @napi-rs/canvas, @types/node | 1173 tests |
 | [exif-atlas](https://github.com/keivanmalhani/exif-atlas) | is a sample report, so you can see what this produces without installing it. The library b | Python | 360 tests |
-| [fireteam-report](https://github.com/keivanmalhani/fireteam-report) | Compare a Destiny 2 fireteam's raid and dungeon clears and get a ranked list of what to ru | TypeScript, jsdom | 390 tests |
 | [gcode-lint](https://github.com/keivanmalhani/gcode-lint) | Static analysis for sliced 3D printer gcode. It reads the file once and tells you what is  | Python | 258 tests |
 | [goldenhour](https://github.com/keivanmalhani/goldenhour) | A command line tool that tells a photographer when and where the light will be, at any coo | Python | 217 tests |
-| [guardian-timeline](https://github.com/keivanmalhani/guardian-timeline) | Raid Report shows your clears. Destiny Tracker shows your kill to death ratio. light.gg sh | TypeScript | 201 tests |
 | [lutbox](https://github.com/keivanmalhani/lutbox) | Drop a photo and a `.cube` LUT onto the page. The grade is applied at full resolution, str | TypeScript | 253 tests |
 | [mcp-probe](https://github.com/keivanmalhani/mcp-probe) | Audit an MCP server before you connect an agent to it. | Python | 221 tests |
 | [timecode](https://github.com/keivanmalhani/timecode) | SMPTE timecode arithmetic for video editors, with drop frame handled the way SMPTE ST 12-1 | TypeScript | 338 tests |
-| [weapon-report](https://github.com/keivanmalhani/weapon-report) | light.gg tells you what is good. DIM tells you what you own. This tells you what you actua | TypeScript, @napi-rs/canvas, @types/node | 306 tests |
 
-**5029 tests across 24 repositories**, and that number is generated rather than written:
+**2922 tests across 19 repositories**, and that number is generated rather than written:
 `collect.py` builds a clean environment per repo, runs each real suite, and writes the counts to
 `verified.json`. The portfolio page and this README are rendered from that file and refuse to print
 a count that did not come from a run. It exists because a README once claimed nine tests that were
