@@ -50,25 +50,25 @@ BROWSER
 
 | Project | What it does | Stack | Suite |
 | --- | --- | --- | --- |
-| [shutter-roll](https://github.com/keivanmalhani/shutter-roll) | Scanned film comes home with no film stock, no camera, no ISO, and the scan date sitting w | Python, exiftool, EXIF / XMP | 31 tests |
-| [shutter-cull](https://github.com/keivanmalhani/shutter-cull) | Point it at a shoot folder. It groups burst frames, scores every frame for blur, eye-openn | Python, OpenCV, ONNX Runtime | 127 tests |
-| [shutter-mcp](https://github.com/keivanmalhani/shutter-mcp) | An MCP server that lets Claude and other agents inspect a photo library conversationally:  | Python, MCP SDK, FastMCP | 21 tests |
-| [shutter-cull-mcp](https://github.com/keivanmalhani/shutter-cull-mcp) | The write side of the agent story. An agent cannot call a write tool here: it has to produ | Python, MCP, agent safety | 51 tests |
-| [shutter-select](https://github.com/keivanmalhani/shutter-select) | Culls raw footage. Transcribes every word locally with Whisper, finds takes by listening r | Python, faster-whisper, PySceneDetect | 97 tests |
-| [shutter-clip](https://github.com/keivanmalhani/shutter-clip) | Zero-edit path from a footage drive to posted clips: motion-ranked picks with readable nam | Python stdlib, ffmpeg, HEVC / VideoToolbox | 53 tests |
-| [shutter-batch](https://github.com/keivanmalhani/shutter-batch) | Point a container at a media volume and the whole archive gets culled on a schedule, witho | Python stdlib, Docker, Kubernetes | 92 tests |
-| [printcheck](https://keivanmalhani.github.io/printcheck/) | Drag an STL onto the page. Overhang faces glow red, thin walls amber, open edges cyan, and | TypeScript, Three.js, Vite | 28 tests |
-| [filament-cost-tracker](https://github.com/keivanmalhani/filament-cost-tracker) | What a 3D print actually costs, which is never just the filament: the failed prints that b | Python stdlib, Klipper / Moonraker, OctoPrint | 370 tests |
-| [camera-gear-pricing](https://github.com/keivanmalhani/camera-gear-pricing) | Used camera gear pricing from the official eBay APIs, never a scraper. It builds a sold-pr | Python stdlib, OAuth2, eBay Browse API | 220 tests |
-| [shutter-warehouse](https://github.com/keivanmalhani/shutter-warehouse) | Batch analytics over the data the other shutter-* tools produce. A PySpark DataFrame ETL,  | Python, PySpark, Spark SQL | 17 tests |
-| [motion-recipes](https://keivanmalhani.github.io/motion-recipes/) | Fourteen production-ready micro-interactions on the Web Animations API, each with a live d | TypeScript, Web Animations API, Vite | 103 tests |
-| [portfolio-site](https://keivanmalhani.github.io/portfolio/) | The public site itself: a portfolio with a WebGL hero where photographs cross-dissolve thr | TypeScript, WebGL2, GLSL | 65 tests |
-| [exif-atlas](https://github.com/keivanmalhani/exif-atlas) | is a sample report, so you can see what this produces without installing it. The library b | Python | 360 tests |
-| [gcode-lint](https://github.com/keivanmalhani/gcode-lint) | Static analysis for sliced 3D printer gcode. It reads the file once and tells you what is  | Python | 258 tests |
-| [goldenhour](https://github.com/keivanmalhani/goldenhour) | A command line tool that tells a photographer when and where the light will be, at any coo | Python | 217 tests |
-| [lutbox](https://github.com/keivanmalhani/lutbox) | Drop a photo and a `.cube` LUT onto the page. The grade is applied at full resolution, str | TypeScript | 253 tests |
+| [shutter-roll](https://github.com/keivanmalhani/shutter-roll) | Scanned film comes home with no film stock, no camera, no ISO, and the scan date sitting... | Python, exiftool, EXIF / XMP | 31 tests |
+| [shutter-cull](https://github.com/keivanmalhani/shutter-cull) | Point it at a shoot folder. It groups burst frames, scores every frame for blur... | Python, OpenCV, ONNX Runtime | 127 tests |
+| [shutter-mcp](https://github.com/keivanmalhani/shutter-mcp) | An MCP server that lets Claude and other agents inspect a photo library conversationally... | Python, MCP SDK, FastMCP | 21 tests |
+| [shutter-cull-mcp](https://github.com/keivanmalhani/shutter-cull-mcp) | The write side of the agent story. An agent cannot call a write tool here: it has to... | Python, MCP, agent safety | 51 tests |
+| [shutter-select](https://github.com/keivanmalhani/shutter-select) | Culls raw footage. Transcribes every word locally with Whisper, finds takes by listening... | Python, faster-whisper, PySceneDetect | 97 tests |
+| [shutter-clip](https://github.com/keivanmalhani/shutter-clip) | Zero-edit path from a footage drive to posted clips: motion-ranked picks with readable... | Python stdlib, ffmpeg, HEVC / VideoToolbox | 53 tests |
+| [shutter-batch](https://github.com/keivanmalhani/shutter-batch) | Point a container at a media volume and the whole archive gets culled on a schedule... | Python stdlib, Docker, Kubernetes | 92 tests |
+| [printcheck](https://keivanmalhani.github.io/printcheck/) | Drag an STL onto the page. Overhang faces glow red, thin walls amber, open edges cyan... | TypeScript, Three.js, Vite | 28 tests |
+| [filament-cost-tracker](https://github.com/keivanmalhani/filament-cost-tracker) | What a 3D print actually costs, which is never just the filament: the failed prints that... | Python stdlib, Klipper / Moonraker, OctoPrint | 370 tests |
+| [camera-gear-pricing](https://github.com/keivanmalhani/camera-gear-pricing) | Used camera gear pricing from the official eBay APIs, never a scraper. It builds a... | Python stdlib, OAuth2, eBay Browse API | 220 tests |
+| [shutter-warehouse](https://github.com/keivanmalhani/shutter-warehouse) | Batch analytics over the data the other shutter-* tools produce. A PySpark DataFrame ETL... | Python, PySpark, Spark SQL | 17 tests |
+| [motion-recipes](https://keivanmalhani.github.io/motion-recipes/) | Fourteen production-ready micro-interactions on the Web Animations API, each with a live... | TypeScript, Web Animations API, Vite | 103 tests |
+| [portfolio-site](https://keivanmalhani.github.io/portfolio/) | The public site itself: a portfolio with a WebGL hero where photographs cross-dissolve... | TypeScript, WebGL2, GLSL | 65 tests |
+| [exif-atlas](https://github.com/keivanmalhani/exif-atlas) | is a sample report, so you can see what this produces without installing it. The library... | Python | 360 tests |
+| [gcode-lint](https://github.com/keivanmalhani/gcode-lint) | Static analysis for sliced 3D printer gcode. It reads the file once and tells you what is... | Python | 258 tests |
+| [goldenhour](https://github.com/keivanmalhani/goldenhour) | A command line tool that tells a photographer when and where the light will be, at any... | Python | 217 tests |
+| [lutbox](https://github.com/keivanmalhani/lutbox) | Drop a photo and a `.cube` LUT onto the page. The grade is applied at full resolution... | TypeScript | 253 tests |
 | [mcp-probe](https://github.com/keivanmalhani/mcp-probe) | Audit an MCP server before you connect an agent to it. | Python | 221 tests |
-| [timecode](https://github.com/keivanmalhani/timecode) | SMPTE timecode arithmetic for video editors, with drop frame handled the way SMPTE ST 12-1 | TypeScript | 338 tests |
+| [timecode](https://github.com/keivanmalhani/timecode) | SMPTE timecode arithmetic for video editors, with drop frame handled the way SMPTE ST... | TypeScript | 338 tests |
 
 **2922 tests across 19 repositories**, and that number is generated rather than written:
 `collect.py` builds a clean environment per repo, runs each real suite, and writes the counts to
@@ -91,7 +91,7 @@ not there, and that is the cheapest thing in the world for an interviewer to che
 - **Composition over coupling.** Tools call each other's CLIs and read versioned JSON rather than
   importing each other, so the expensive analysis runs once and either side can move.
 
-Every repo is MIT, has CI, and reads in English and Spanish.
+Every repo is MIT and has CI.
 
 Currently looking for customer-facing technical work where the job is turning a hard system into
 something a person can actually use.
