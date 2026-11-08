@@ -1,97 +1,22 @@
-# Hi, I'm Keivan
+# Keivan Malhani
 
-I build local-first tools for photographers and filmmakers. 19 of them are here, they all run
-entirely on your own machine, and none of them ask for an account.
+I build tools around things I do: photography, filmmaking, cinema, and 3D printing.
 
-The through-line: **taking a shoot from memory card to finished post without a subscription and
-without uploading a client's work to somebody else's cloud.** Along the way that turned into an
-agent safety story, a deployment story, and a few workshop tools built the same way.
+## Building now
 
-```text
-PHOTO
-  shutter-roll ........... scanned film gets its real stock, camera and shoot date back
-  shutter-cull ........... burst clustering, blur and eye scoring, keepers picked
-       |
-       v
-  Lightroom Classic reads the XMP sidecars natively
+**KVH · keivansvideohelper** — a desktop workspace for reviewing footage, saving useful moments, organizing selects, and exporting clips for an edit. Early development; source is private.
 
-AGENTS
-  shutter-mcp ............ the same library, read-only, exposed to AI agents
-  shutter-cull-mcp ....... the write side: agents propose, humans confirm, undo always
+**KPH · keivansphotohelper** — a desktop workspace for comparing photos, choosing favorites, sequencing a series, and keeping film rolls organized. Early development; source is private.
 
-VIDEO
-  shutter-select ......... local transcription, take detection, audio and image scoring
-  shutter-clip ........... social re-rank, cut, phone-ready posts
-       |
-       +--> selects timeline, opens in Resolve or Premiere
-       +--> analysis JSON, a versioned contract computed once
+## Projects you can try
 
-ON A SCHEDULE
-  shutter-batch .......... the whole archive, nightly, in a container. Never twice.
+- **[Ve a Verlo](https://github.com/keivanmalhani/veaverlo)** — cinema discovery for Mexico. [Open the web beta](https://veaverlo.pages.dev).
+- **[printcheck](https://github.com/keivanmalhani/printcheck)** — inspect an STL for overhangs, thin walls, and printer fit. [Try it in your browser](https://keivanmalhani.github.io/printcheck/).
+- **[motion-recipes](https://github.com/keivanmalhani/motion-recipes)** — interactive examples of interface motion built with the Web Animations API.
 
-WORKSHOP
-  printcheck ............. drop an STL, see if it will print. Nothing uploads.
-  filament-cost-tracker .. filament inventory and the true cost of a print, failures included
-  camera-gear-pricing .... is this used lens actually a deal, measured against its own sold history
-  shutter-warehouse ...... the other tools&#x27; output, aggregated three ways in Spark
+## Workshop
 
-BROWSER
-  motion-recipes ......... fourteen micro-interactions with no animation library underneath
-  portfolio-site ......... the site you are looking at, tested without a GPU
-  exif-atlas ............. is a sample report, so you can see what this produces without installi
-  gcode-lint ............. Static analysis for sliced 3D printer gcode. It reads the file once an
-  goldenhour ............. A command line tool that tells a photographer when and where the light
-  lutbox ................. Drop a photo and a `.cube` LUT onto the page. The grade is applied at 
-  mcp-probe .............. Audit an MCP server before you connect an agent to it.
-  timecode ............... SMPTE timecode arithmetic for video editors, with drop frame handled t
-```
+- **[filament-cost-tracker](https://github.com/keivanmalhani/filament-cost-tracker)** — filament inventory and print costs, including failures, electricity, and machine wear.
+- **[gcode-lint](https://github.com/keivanmalhani/gcode-lint)** — checks sliced printer files for settings worth reviewing before a print.
 
-## The tools
-
-| Project | What it does | Stack | Suite |
-| --- | --- | --- | --- |
-| [shutter-roll](https://github.com/keivanmalhani/shutter-roll) | Scanned film comes home with no film stock, no camera, no ISO, and the scan date sitting... | Python, exiftool, EXIF / XMP | 31 tests |
-| [shutter-cull](https://github.com/keivanmalhani/shutter-cull) | Point it at a shoot folder. It groups burst frames, scores every frame for blur... | Python, OpenCV, ONNX Runtime | 127 tests |
-| [shutter-mcp](https://github.com/keivanmalhani/shutter-mcp) | An MCP server that lets Claude and other agents inspect a photo library conversationally... | Python, MCP SDK, FastMCP | 21 tests |
-| [shutter-cull-mcp](https://github.com/keivanmalhani/shutter-cull-mcp) | The write side of the agent story. An agent cannot call a write tool here: it has to... | Python, MCP, agent safety | 51 tests |
-| [shutter-select](https://github.com/keivanmalhani/shutter-select) | Culls raw footage. Transcribes every word locally with Whisper, finds takes by listening... | Python, faster-whisper, PySceneDetect | 97 tests |
-| [shutter-clip](https://github.com/keivanmalhani/shutter-clip) | Zero-edit path from a footage drive to posted clips: motion-ranked picks with readable... | Python stdlib, ffmpeg, HEVC / VideoToolbox | 53 tests |
-| [shutter-batch](https://github.com/keivanmalhani/shutter-batch) | Point a container at a media volume and the whole archive gets culled on a schedule... | Python stdlib, Docker, Kubernetes | 92 tests |
-| [printcheck](https://keivanmalhani.github.io/printcheck/) | Drag an STL onto the page. Overhang faces glow red, thin walls amber, open edges cyan... | TypeScript, Three.js, Vite | 28 tests |
-| [filament-cost-tracker](https://github.com/keivanmalhani/filament-cost-tracker) | What a 3D print actually costs, which is never just the filament: the failed prints that... | Python stdlib, Klipper / Moonraker, OctoPrint | 370 tests |
-| [camera-gear-pricing](https://github.com/keivanmalhani/camera-gear-pricing) | Used camera gear pricing from the official eBay APIs, never a scraper. It builds a... | Python stdlib, OAuth2, eBay Browse API | 220 tests |
-| [shutter-warehouse](https://github.com/keivanmalhani/shutter-warehouse) | Batch analytics over the data the other shutter-* tools produce. A PySpark DataFrame ETL... | Python, PySpark, Spark SQL | 17 tests |
-| [motion-recipes](https://keivanmalhani.github.io/motion-recipes/) | Fourteen production-ready micro-interactions on the Web Animations API, each with a live... | TypeScript, Web Animations API, Vite | 103 tests |
-| [portfolio-site](https://keivanmalhani.github.io/portfolio/) | The public site itself: a portfolio with a WebGL hero where photographs cross-dissolve... | TypeScript, WebGL2, GLSL | 65 tests |
-| [exif-atlas](https://github.com/keivanmalhani/exif-atlas) | is a sample report, so you can see what this produces without installing it. The library... | Python | 360 tests |
-| [gcode-lint](https://github.com/keivanmalhani/gcode-lint) | Static analysis for sliced 3D printer gcode. It reads the file once and tells you what is... | Python | 258 tests |
-| [goldenhour](https://github.com/keivanmalhani/goldenhour) | A command line tool that tells a photographer when and where the light will be, at any... | Python | 217 tests |
-| [lutbox](https://github.com/keivanmalhani/lutbox) | Drop a photo and a `.cube` LUT onto the page. The grade is applied at full resolution... | TypeScript | 253 tests |
-| [mcp-probe](https://github.com/keivanmalhani/mcp-probe) | Audit an MCP server before you connect an agent to it. | Python | 221 tests |
-| [timecode](https://github.com/keivanmalhani/timecode) | SMPTE timecode arithmetic for video editors, with drop frame handled the way SMPTE ST... | TypeScript | 338 tests |
-
-**2922 tests across 19 repositories**, and that number is generated rather than written:
-`collect.py` builds a clean environment per repo, runs each real suite, and writes the counts to
-`verified.json`. The portfolio page and this README are rendered from that file and refuse to print
-a count that did not come from a run. It exists because a README once claimed nine tests that were
-not there, and that is the cheapest thing in the world for an interviewer to check.
-
-## How I build
-
-- **Local-first is a feature, not a limitation.** Client work should not have to cross a network to
-  be useful. Every engine reads from disk, computes on the CPU in front of it, and writes back
-  beside the originals.
-- **Deployable and private are not opposites.** shutter-batch runs the same engines nightly in a
-  container, mounting your volume, on your cluster, with no outbound network.
-- **Judgment beats thresholds.** Scores are percentile-ranked within a run, so each shoot is judged
-  against itself instead of against a constant that breaks on the next one.
-- **Agents propose, humans confirm.** The write-capable MCP server cannot be talked into a write:
-  it needs a content-addressed plan token, an exact-phrase confirmation, and a staleness re-check
-  at write time. Everything is undoable.
-- **Composition over coupling.** Tools call each other's CLIs and read versioned JSON rather than
-  importing each other, so the expensive analysis runs once and either side can move.
-
-Every repo is MIT and has CI.
-
-Currently looking for customer-facing technical work where the job is turning a hard system into
-something a person can actually use.
+I prefer software that works with your files on your own computer. Current development is focused on making KVH and KPH useful in real photography and video workflows.
